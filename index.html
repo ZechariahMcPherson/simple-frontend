@@ -8,13 +8,23 @@
   </head>
   <body>
     <label for="username">Username</label>
-    <input onblur="" type="text" placeholder="username" id="username" />
-    <div>
+    <input
+      onblur="usernamePasswordOnBlur(this, 'usernameRequired')"
+      type="text"
+      placeholder="username"
+      id="username"
+    />
+    <div id="usernameRequired">
       * required
     </div>
     <label for="password">Password</label>
-    <input type="password" placeholder="password" id="password" />
-    <div>
+    <input
+      onblur="usernamePasswordOnBlur(this, 'passwordRequired')"
+      type="password"
+      placeholder="password"
+      id="password"
+    />
+    <div id="passwordRequired">
       * required
     </div>
   </body>
