@@ -23,3 +23,17 @@ const signInOnClick = () => {
 
   window.location.href = "second-page.html";
 };
+
+const callStarwarsApi = () => {
+  fetch("https://swapi.co/api/people/1/")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+
+      const starwarsApiDataDiv = document.getElementById("starwarsApiDataDiv");
+      starwarsApiDataDiv.innerHTML = data.name;
+    })
+    .catch(error => console.log(error));
+};
